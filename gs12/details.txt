@@ -1,0 +1,5 @@
+Function Based API View in Django REST Framework
+
+part1-Basic idea get post 
+part2-Response method Crud api using thir party application
+part3-Crud using browser  

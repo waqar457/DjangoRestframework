@@ -1,0 +1,3 @@
+Serializer and Serializertion in Django REST Framework
+
+myapp.py file is third party user like application
