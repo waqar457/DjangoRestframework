@@ -1,4 +1,4 @@
-"""gs13 URL Configuration
+"""gs17 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -14,10 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from api import views
+from rest_framework.routers import DefaultRouter
+
+# Creating Router Object 
+router=DefaultRouter()
+
+# Register StudentViewSet with router
+router.register("studentapi",views.StudentModelViewSet,basename='student')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('studentapi/',views.StudentAPI.as_view()),
-    path('studentapi/<int:pk>/',views.StudentAPI.as_view())
+    path("",include(router.urls))
 ]

@@ -1,4 +1,4 @@
-"""gs13 URL Configuration
+"""gs14 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -18,6 +18,9 @@ from django.urls import path
 from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('studentapi/',views.StudentAPI.as_view()),
-    path('studentapi/<int:pk>/',views.StudentAPI.as_view())
+    path('studentapi/',views.StudentList.as_view()),
+    path('studentapi/create/',views.StudentCreate.as_view()),
+    path('studentapi/<int:pk>/',views.StudentRetrive.as_view()),
+    path('studentapi/update/<int:pk>/',views.StudentUpdate.as_view()),
+    # path('studentapi/<int:pk>/',views.StudentAPI.as_view())
 ]
